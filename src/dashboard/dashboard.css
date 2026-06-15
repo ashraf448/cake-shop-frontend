@@ -1,0 +1,156 @@
+/* ═══════════════════════════════════════════════
+   Dashboard CSS — حطه في src/dashboard/dashboard.css
+   وعمل import في Layout.jsx
+═══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* ─── CSS Variables ─────────────────────────────────────────────────── */
+.admin-root {
+  --bg:       #f8fafc;
+  --card:     #ffffff;
+  --text:     #0f0f1a;
+  --muted:    #6b7280;
+  --border:   #e5e7eb;
+  --accent:   #e63946;
+  --success:  #2d9b6f;
+  --danger:   #d94040;
+  --warning:  #f0c040;
+  --info:     #1a73e8;
+  --primary:  #0f0f1a;
+
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ─── Card ──────────────────────────────────────────────────────────── */
+.admin-root .card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+.admin-root .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.admin-root .card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ─── Metric Card ───────────────────────────────────────────────────── */
+.admin-root .metric-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+.admin-root .metric-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.admin-root .metric-value {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+}
+.admin-root .metric-sub  { font-size: 11px; margin-top: 6px; }
+.admin-root .metric-up   { color: var(--success); }
+.admin-root .metric-down { color: var(--danger); }
+
+/* ─── Table ─────────────────────────────────────────────────────────── */
+.admin-root .table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.admin-root .table th {
+  text-align: left;
+  padding: 8px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  border-bottom: 1px solid var(--border);
+}
+.admin-root .table td {
+  padding: 10px 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+.admin-root .table tr:last-child td { border-bottom: none; }
+.admin-root .table tr:hover td { background: var(--bg); }
+
+/* ─── Buttons ───────────────────────────────────────────────────────── */
+.admin-root .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity .15s;
+  border: 1px solid transparent;
+}
+.admin-root .btn:disabled { opacity: .5; cursor: not-allowed; }
+.admin-root .btn-sm  { padding: 4px 10px; font-size: 12px; }
+.admin-root .btn-primary { background: var(--primary); color: #fff; }
+.admin-root .btn-outline { background: transparent; border-color: var(--border); color: var(--text); }
+.admin-root .btn-danger  { background: var(--danger);  color: #fff; }
+
+/* ─── Badges ────────────────────────────────────────────────────────── */
+.admin-root .badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+}
+.admin-root .badge-instock   { background: #e6f5ee; color: var(--success); }
+.admin-root .badge-low       { background: #fff8e6; color: var(--warning); }
+.admin-root .badge-out       { background: #fde8e8; color: var(--danger); }
+.admin-root .badge-paid      { background: #e6f5ee; color: var(--success); }
+.admin-root .badge-unpaid    { background: #fde8e8; color: var(--danger); }
+.admin-root .badge-pending   { background: #fff8e6; color: #b45309; }
+.admin-root .badge-confirmed { background: #e6f0ff; color: var(--info); }
+.admin-root .badge-preparing { background: #f0e6ff; color: #7b3fd4; }
+.admin-root .badge-shipped   { background: #e0f5fb; color: #0891b2; }
+.admin-root .badge-delivered { background: #e6f5ee; color: var(--success); }
+.admin-root .badge-cancelled { background: #fde8e8; color: var(--danger); }
+
+/* ─── Form ──────────────────────────────────────────────────────────── */
+.admin-root .form-group { display: flex; flex-direction: column; }
+.admin-root .form-label { font-size: 12px; font-weight: 500; color: var(--muted); margin-bottom: 4px; }
+.admin-root .form-input {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+  outline: none;
+  background: var(--card);
+  color: var(--text);
+}
+.admin-root .form-input:focus { border-color: var(--info); }
+
+/* ─── Progress ──────────────────────────────────────────────────────── */
+.admin-root .progress {
+  height: 6px;
+  background: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.admin-root .progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width .3s;
+}

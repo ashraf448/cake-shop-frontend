@@ -1,0 +1,87 @@
+/* @import url(@fontsource/delius);
+@import "tailwindcss";
+:root{
+  --Background-color :#D0BFA5;
+  --navbar-color :#496D72;
+  --primary-color :#54844D;
+  --Text-color :#2b2b2b;
+  --White-color :#ffffff;
+  --main-font : 'delius',sans-serif;
+}
+body{
+  font-family: var(--main-font);
+  background: var(--Background-color);
+}
+ */
+
+
+ @import url(@fontsource/delius);
+@import "tailwindcss";
+
+/* ── Default (Light - Beige) ─────────────────────────────────────────────── */
+:root {
+  --Background-color: #D0BFA5;
+  --navbar-color:     #496D72;
+  --primary-color:    #54844D;
+  --Text-color:       #2b2b2b;
+  --White-color:      #ffffff;
+  --card-color:       #ffffff;
+  --main-font:        'delius', sans-serif;
+}
+
+/* ── Dark ────────────────────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --Background-color: #1a1a2e;
+  --navbar-color:     #16213e;
+  --primary-color:    #e63946;
+  --Text-color:       #f0f0f0;
+  --White-color:      #2a2a3e;
+  --card-color:       #2a2a3e;
+}
+
+/* ── Rose ────────────────────────────────────────────────────────────────── */
+[data-theme="rose"] {
+  --Background-color: #fdf2f8;
+  --navbar-color:     #be185d;
+  --primary-color:    #ec4899;
+  --Text-color:       #3b0764;
+  --White-color:      #ffffff;
+  --card-color:       #fff0f7;
+}
+
+/* ── Mint ────────────────────────────────────────────────────────────────── */
+[data-theme="mint"] {
+  --Background-color: #f0fdf4;
+  --navbar-color:     #166534;
+  --primary-color:    #22c55e;
+  --Text-color:       #14532d;
+  --White-color:      #ffffff;
+  --card-color:       #f0fdf4;
+}
+
+/* ── Lavender ────────────────────────────────────────────────────────────── */
+[data-theme="lavender"] {
+  --Background-color: #f5f3ff;
+  --navbar-color:     #5b21b6;
+  --primary-color:    #7c3aed;
+  --Text-color:       #2e1065;
+  --White-color:      #ffffff;
+  --card-color:       #ede9fe;
+}
+
+/* ── Warm Gold ───────────────────────────────────────────────────────────── */
+[data-theme="gold"] {
+  --Background-color: #fffbeb;
+  --navbar-color:     #92400e;
+  --primary-color:    #d97706;
+  --Text-color:       #451a03;
+  --White-color:      #ffffff;
+  --card-color:       #fef9c3;
+}
+
+body {
+  font-family: var(--main-font);
+  background: var(--Background-color);
+  color: var(--Text-color);
+  transition: background 0.3s, color 0.3s;
+}h
