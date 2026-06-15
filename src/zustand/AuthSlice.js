@@ -6,10 +6,8 @@ import toast from "react-hot-toast";
 
 // axios instance بتاعت الفرونت
 const api = axios.create({
-  baseURL: "/api",
-  headers: { "Content-Type": "application/json" },
+baseURL: import.meta.env.VITE_API_URL || "https://cake-shop-backend-production.up.railway.app/api",  headers: { "Content-Type": "application/json" },
 });
-
 // ضيف التوكن تلقائياً في كل request
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");

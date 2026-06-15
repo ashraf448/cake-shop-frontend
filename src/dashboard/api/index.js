@@ -2,9 +2,9 @@ import axios from 'axios'
 
 // يستخدم نفس الـ baseURL والـ token بتاع الفرونت
 const api = axios.create({
-  baseURL: '/api',
-  headers: { 'Content-Type': 'application/json' },
-})
+  baseURL: import.meta.env.VITE_API_URL,
+  headers: { "Content-Type": "application/json" },
+});
 
 // نفس الـ token key بتاع الفرونت
 api.interceptors.request.use((config) => {

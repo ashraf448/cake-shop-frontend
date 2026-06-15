@@ -9,7 +9,7 @@ export default function FeaturedProducts() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("/api/products/featured")
+    fetch("/products/featured")
       .then(r => r.json())
       .then(data => setProducts(data.products || []))
       .catch(() => {})

@@ -13,7 +13,7 @@ export default defineConfig({
     proxy: {
       // كل request بيبدأ بـ /api بيتوجه للباك تلقائياً
       "/api": {
-        target: "http://localhost:5000",
+        target: "cake-shop-backend-production.up.railway.app",
         changeOrigin: true,
       },
     },

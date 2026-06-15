@@ -196,7 +196,7 @@ export default function Offers() {
   const [expiresAt, setExpiresAt] = useState(null);
 
   useEffect(() => {
-    fetch("/api/offer-settings")
+    fetch("/offer-settings")
       .then(r => r.json())
       .then(data => {
         if (data.settings) {
@@ -213,7 +213,7 @@ export default function Offers() {
         }
       }).catch(() => {});
 
-    fetch("/api/products?limit=20&sort=-discount")
+    fetch("/products?limit=20&sort=-discount")
       .then(r => r.json())
       .then(data => setProducts((data.products || []).filter(p => (p.discount || 0) > 0)))
       .catch(() => {});

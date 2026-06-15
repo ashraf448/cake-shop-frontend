@@ -30,7 +30,7 @@ export default function Hero() {
   const [settings, setSettings] = useState(DEFAULT_SETTINGS);
 
   useEffect(() => {
-    fetch("/api/hero")
+    fetch("/hero")
       .then(r => r.json())
       .then(data => {
         if (data.settings) {
