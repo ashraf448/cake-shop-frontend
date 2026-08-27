@@ -142,7 +142,7 @@ export default function Analytics() {
       </div>
 
       {/* KPIs */}
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:14, marginBottom:20 }}>
+      <div className="grid-4" style={{ gap:14, marginBottom:20 }}>
         {kpis.map(k=>(
           <div className="metric-card" key={k.label}>
             <div className="metric-label">{k.label}</div>
@@ -152,7 +152,7 @@ export default function Analytics() {
       </div>
 
       {/* Charts row 1 */}
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:14, marginBottom:20 }}>
+      <div className="grid-2" style={{ gap:14, marginBottom:20 }}>
         <div className="card">
           <div className="card-header">
             <span className="card-title">Monthly Revenue {selectedYear}</span>
@@ -197,7 +197,7 @@ export default function Analytics() {
       </div>
 
       {/* Charts row 2 */}
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:14, marginBottom:20 }}>
+      <div className="grid-2" style={{ gap:14, marginBottom:20 }}>
         <div className="card">
           <div className="card-header"><span className="card-title">Weekly Orders (Last 7 Days)</span></div>
           <ResponsiveContainer width="100%" height={160}>
@@ -224,7 +224,7 @@ export default function Analytics() {
       </div>
 
       {/* ── TOP CUSTOMERS ── */}
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:14, marginBottom:20 }}>
+      <div className="grid-2" style={{ gap:14, marginBottom:20 }}>
 
         {/* Top by orders count */}
         <div className="card">
@@ -234,7 +234,8 @@ export default function Analytics() {
           {topByOrders.length === 0 ? (
             <div style={{ textAlign:'center', padding:32, color:'var(--muted)' }}>No data for {selectedYear}</div>
           ) : (
-            <table className="table">
+            <div className="table-wrap">
+<table className="table">
               <thead><tr><th>#</th><th>Customer</th><th>Phone</th><th>Orders</th><th>Revenue</th></tr></thead>
               <tbody>
                 {topByOrders.map((c, i) => (
@@ -256,6 +257,7 @@ export default function Analytics() {
                 ))}
               </tbody>
             </table>
+</div>
           )}
         </div>
 
@@ -267,7 +269,8 @@ export default function Analytics() {
           {topByRevenue.length === 0 ? (
             <div style={{ textAlign:'center', padding:32, color:'var(--muted)' }}>No data for {selectedYear}</div>
           ) : (
-            <table className="table">
+            <div className="table-wrap">
+<table className="table">
               <thead><tr><th>#</th><th>Customer</th><th>Phone</th><th>Revenue</th><th>Orders</th></tr></thead>
               <tbody>
                 {topByRevenue.map((c, i) => (
@@ -287,6 +290,7 @@ export default function Analytics() {
                 ))}
               </tbody>
             </table>
+</div>
           )}
         </div>
       </div>
@@ -294,7 +298,7 @@ export default function Analytics() {
       {/* Custom orders summary */}
       <div className="card">
         <div className="card-header"><span className="card-title">🎂 Custom Orders Summary — {selectedYear}</span></div>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(7,1fr)', gap:8, padding:'12px 0' }}>
+        <div className="grid-7" style={{ gap:8, padding:'12px 0' }}>
           {['Pending','Quoted','Accepted','Paid','Preparing','Delivered','Cancelled'].map(s=>(
             <div key={s} style={{ textAlign:'center', padding:'12px 8px', background:'var(--bg)', borderRadius:10 }}>
               <p style={{ fontSize:10, color:'var(--muted)', marginBottom:4 }}>{s}</p>

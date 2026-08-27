@@ -81,7 +81,7 @@ export default function HeroSettings() {
         </button>
       </div>
 
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }}>
+      <div className="grid-2" style={{ gap:16, marginBottom:16 }}>
 
         {/* Main text */}
         <div className="card">
@@ -102,7 +102,7 @@ export default function HeroSettings() {
             <input className="form-input" name="badge" value={settings.badge}
               onChange={handleChange} placeholder="20% OFF" />
           </div>
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
+          <div className="grid-2" style={{ gap:10 }}>
             <div className="form-group">
               <label className="form-label">Shop Button Text</label>
               <input className="form-input" name="btnShop" value={settings.btnShop}
@@ -158,7 +158,7 @@ export default function HeroSettings() {
             <p>No slides yet. Add your first slide!</p>
           </div>
         ) : (
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))', gap:14 }}>
+          <div className="grid-auto-280" style={{ gap:14 }}>
             {settings.slides.map((slide, i) => (
               <div key={i} style={{ border:'1px solid var(--border)', borderRadius:10, overflow:'hidden' }}>
                 {slide.image ? (

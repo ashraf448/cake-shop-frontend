@@ -19,7 +19,7 @@ const [password, setPassword] = useState('Admin@123')
       minHeight: '100vh', display: 'flex', alignItems: 'center',
       justifyContent: 'center', background: '#0f0f1a'
     }}>
-      <div style={{ width: 380 }}>
+      <div style={{ width: 'min(380px, 92vw)' }}>
         {/* Logo */}
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{

@@ -81,7 +81,8 @@ export default function Orders() {
           <div style={{ textAlign:'center', padding:40, color:'var(--muted)' }}>No orders found.</div>
         ) : (
           <>
-            <table className="table">
+            <div className="table-wrap">
+<table className="table">
               <thead>
                 <tr>
                   <th>Order ID</th><th>Customer</th><th>Phone</th>
@@ -137,6 +138,7 @@ export default function Orders() {
                 ))}
               </tbody>
             </table>
+</div>
 
             {/* Pagination */}
             {totalPages > 1 && (

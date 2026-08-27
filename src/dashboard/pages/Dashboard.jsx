@@ -71,7 +71,7 @@ export default function Dashboard() {
         <p style={{color:'var(--muted)',fontSize:13}}>Welcome back! Here's what's happening today.</p>
       </div>
 
-      <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:14,marginBottom:20}}>
+      <div className="grid-4" style={{ gap:14,marginBottom:20 }}>
         {metrics.map(m=>(
           <div className="metric-card" key={m.label}>
             <div style={{display:'flex',justifyContent:'space-between',marginBottom:10}}>
@@ -86,7 +86,7 @@ export default function Dashboard() {
         ))}
       </div>
 
-      <div style={{display:'grid',gridTemplateColumns:'2fr 1fr',gap:14,marginBottom:20}}>
+      <div className="grid-2-1" style={{ gap:14,marginBottom:20 }}>
         <div className="card">
           <div className="card-header">
             <span className="card-title">Revenue Overview</span>
@@ -125,7 +125,8 @@ export default function Dashboard() {
         </div>
         {loading?<div style={{textAlign:'center',padding:24,color:'var(--muted)'}}>Loading...</div>:
         orders.length===0?<div style={{textAlign:'center',padding:32,color:'var(--muted)'}}>No orders yet.</div>:(
-          <table className="table">
+          <div className="table-wrap">
+<table className="table">
             <thead><tr><th>Order ID</th><th>Customer</th><th>Items</th><th>Total</th><th>Payment</th><th>Status</th><th>Date</th></tr></thead>
             <tbody>
               {orders.map(o=>(
@@ -142,6 +143,7 @@ export default function Dashboard() {
               ))}
             </tbody>
           </table>
+</div>
         )}
       </div>
 
@@ -151,7 +153,8 @@ export default function Dashboard() {
             <span className="card-title">🎂 Custom Orders Need Pricing</span>
             <Link to="/custom-orders" style={{fontSize:12,color:'var(--info)',textDecoration:'none'}}>View all →</Link>
           </div>
-          <table className="table">
+          <div className="table-wrap">
+<table className="table">
             <thead><tr><th>ID</th><th>Customer</th><th>Description</th><th>Date</th><th></th></tr></thead>
             <tbody>
               {customOrders.filter(o=>o.status==='Pending').slice(0,5).map(o=>(
@@ -165,6 +168,7 @@ export default function Dashboard() {
               ))}
             </tbody>
           </table>
+</div>
         </div>
       )}
     </div>

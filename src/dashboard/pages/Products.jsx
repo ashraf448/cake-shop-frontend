@@ -28,7 +28,7 @@ function CategoryModal({ categories, onClose, onAdd, onDelete }) {
         zIndex: 1000,
       }}
     >
-      <div className="card" style={{ width: 420, padding: 24 }}>
+      <div className="card" style={{ width: 'min(420px, 92vw)', padding: 24 }}>
         <div
           style={{
             display: "flex",
@@ -275,7 +275,7 @@ function EditModal({ product, categories, onClose, onSave }) {
       <div
         className="card"
         style={{
-          width: 520,
+          width: 'min(520px, 92vw)',
           padding: 24,
           maxHeight: "90vh",
           overflowY: "auto",
@@ -304,12 +304,8 @@ function EditModal({ product, categories, onClose, onSave }) {
           </button>
         </div>
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 12,
-            marginBottom: 16,
-          }}
+          className="grid-2" style={{ gap: 12,
+            marginBottom: 16 }}
         >
           <div className="form-group" style={{ gridColumn: "1/-1" }}>
             <label className="form-label">Title</label>
@@ -640,12 +636,8 @@ export default function Products() {
           </div>
           <form onSubmit={handleSave}>
             <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr 1fr",
-                gap: 12,
-                marginBottom: 12,
-              }}
+              className="grid-3" style={{ gap: 12,
+                marginBottom: 12 }}
             >
               <div className="form-group">
                 <label className="form-label">Title *</label>
@@ -820,11 +812,7 @@ export default function Products() {
         </div>
       ) : (
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3,1fr)",
-            gap: 14,
-          }}
+          className="grid-3" style={{ gap: 14 }}
         >
           {filtered.map((p) => {
             const sb = stockBadge(p.stock);

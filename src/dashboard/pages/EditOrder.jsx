@@ -153,7 +153,7 @@ export default function EditOrder() {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 20 }}>
+      <div className="grid-main-side" style={{ gap: 20 }}>
 
         {/* ── Left column ── */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -163,7 +163,7 @@ export default function EditOrder() {
             <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 16, display: 'flex', alignItems: 'center', gap: 8 }}>
               <span>👤</span> Customer & Shipping
             </h3>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <div className="grid-2" style={{ gap: 16 }}>
               <Field label="Full Name"  value={order.shippingAddress?.name} />
               <Field label="Phone"      value={order.shippingAddress?.phone} mono />
               <Field label="City"       value={order.shippingAddress?.city} />
@@ -297,7 +297,7 @@ export default function EditOrder() {
             <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 16, display: 'flex', alignItems: 'center', gap: 8 }}>
               <span>💳</span> Payment
             </h3>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <div className="grid-2" style={{ gap: 16 }}>
               <Field label="Method"  value={order.paymentMethod} />
               <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                 <span style={{ fontSize: 11, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '.06em' }}>Status</span>
@@ -606,7 +606,7 @@ export default function EditOrder() {
                   </div>
 
                   {/* Meta grid */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
+                  <div className="grid-2" style={{ gap: 12, marginBottom: 16 }}>
                     <div style={{ padding: '10px 14px', borderRadius: 10, background: 'var(--bg)', border: '1px solid var(--border)' }}>
                       <p style={{ fontSize: 10, color: 'var(--muted)', margin: 0, textTransform: 'uppercase', letterSpacing: '.06em' }}>Category</p>
                       <p style={{ fontSize: 13, fontWeight: 600, margin: '4px 0 0', textTransform: 'capitalize' }}>{p.category}</p>

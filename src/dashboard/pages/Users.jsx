@@ -49,7 +49,7 @@ export default function Users() {
       </div>
 
       {/* Stats */}
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:14, marginBottom:20 }}>
+      <div className="grid-3" style={{ gap:14, marginBottom:20 }}>
         <div className="metric-card">
           <div className="metric-label">Total Users</div>
           <div className="metric-value">{total.toLocaleString()}</div>
@@ -89,7 +89,8 @@ export default function Users() {
         {loading ? (
           <div style={{ textAlign:'center', padding:40, color:'var(--muted)' }}>Loading users...</div>
         ) : (
-          <table className="table">
+          <div className="table-wrap">
+<table className="table">
             <thead>
               <tr>
                 <th>User</th><th>Email</th><th>Phone</th><th>Gender</th>
@@ -145,6 +146,7 @@ export default function Users() {
               )}
             </tbody>
           </table>
+</div>
         )}
       </div>
     </div>

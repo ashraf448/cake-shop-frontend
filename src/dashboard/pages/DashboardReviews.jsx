@@ -59,7 +59,7 @@ export default function DashboardReviews() {
       ) : filtered.length === 0 ? (
         <div style={{ textAlign:'center', padding:40, color:'var(--muted)' }}>No reviews found.</div>
       ) : (
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(320px, 1fr))', gap:14 }}>
+        <div className="grid-auto-320" style={{ gap:14 }}>
           {filtered.map(r => (
             <div key={r._id} className="card" style={{ padding:16 }}>
               {/* Status badge */}

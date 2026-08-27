@@ -90,7 +90,7 @@ export default function Stock() {
       </div>
 
       {/* KPIs */}
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:14, marginBottom:20 }}>
+      <div className="grid-4" style={{ gap:14, marginBottom:20 }}>
         {[
           { label:'Total SKUs',     value:total,   color:'var(--text)',    icon:'📦', key:'all' },
           { label:'In Stock',       value:inStock, color:'var(--success)', icon:'✅', key:'instock' },
@@ -164,7 +164,8 @@ export default function Stock() {
         ) : filtered.length === 0 ? (
           <div style={{ textAlign:'center', padding:40, color:'var(--muted)' }}>No products found.</div>
         ) : (
-          <table className="table">
+          <div className="table-wrap">
+<table className="table">
             <thead>
               <tr><th>Product</th><th>Category</th><th>Status</th><th>Stock</th><th>Progress</th><th>Actions</th></tr>
             </thead>
@@ -213,6 +214,7 @@ export default function Stock() {
               })}
             </tbody>
           </table>
+</div>
         )}
       </div>
     </div>

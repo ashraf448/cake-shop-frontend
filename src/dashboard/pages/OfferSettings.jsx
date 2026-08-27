@@ -58,7 +58,7 @@ export default function OfferSettings() {
         </div>
       </div>
 
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }}>
+      <div className="grid-2" style={{ gap:16 }}>
 
         {/* Settings */}
         <div className="card">

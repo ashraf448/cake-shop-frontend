@@ -15,7 +15,7 @@ function DeliveryModal({ onConfirm, onClose, loading }) {
 
   return (
     <div style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.55)', display:'flex', alignItems:'center', justifyContent:'center', zIndex:1000 }}>
-      <div className="card" style={{ width:460, padding:28 }}>
+      <div className="card" style={{ width:'min(460px, 92vw)', padding:28 }}>
         <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:20 }}>
           <div>
             <h3 style={{ fontSize:16, fontWeight:700 }}>🎉 Confirm Delivery</h3>
@@ -175,7 +175,7 @@ export default function OrderTracking() {
       </div>
 
       {/* Summary cards */}
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:12, marginBottom:18 }}>
+      <div className="grid-4" style={{ gap:12, marginBottom:18 }}>
         {[
           { label:'Customer', value: order.shippingAddress?.name },
           { label:'Phone',    value: order.shippingAddress?.phone },
@@ -270,10 +270,11 @@ export default function OrderTracking() {
       </div>
 
       {/* Items + Payment */}
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:14 }}>
+      <div className="grid-2" style={{ gap:14 }}>
         <div className="card">
           <div className="card-header"><span className="card-title">Order Items ({order.items?.length})</span></div>
-          <table className="table">
+          <div className="table-wrap">
+<table className="table">
             <thead><tr><th>Product</th><th>Qty</th><th>Price</th><th>Subtotal</th></tr></thead>
             <tbody>
               {order.items?.map((item, i) => {
@@ -294,6 +295,7 @@ export default function OrderTracking() {
               })}
             </tbody>
           </table>
+</div>
           <div style={{ paddingTop:10, marginTop:6, borderTop:'1px solid var(--border)', fontSize:13 }}>
             <div style={{ display:'flex', justifyContent:'space-between', marginBottom:4 }}><span style={{ color:'var(--muted)' }}>Subtotal</span><span>EGP {order.subtotal?.toLocaleString()}</span></div>
             <div style={{ display:'flex', justifyContent:'space-between', marginBottom:4 }}><span style={{ color:'var(--muted)' }}>Shipping</span><span>EGP {order.shipping}</span></div>

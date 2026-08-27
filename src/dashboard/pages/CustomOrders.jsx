@@ -29,7 +29,7 @@ function QuoteModal({ order, onClose, onSave }) {
 
   return (
     <div style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.5)', display:'flex', alignItems:'center', justifyContent:'center', zIndex:1000 }}>
-      <div className="card" style={{ width:440, padding:24 }}>
+      <div className="card" style={{ width:'min(440px, 92vw)', padding:24 }}>
         <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:20 }}>
           <h3 style={{ fontSize:16, fontWeight:600 }}>💰 Set Price Quote</h3>
           <button onClick={onClose} style={{ background:'none', border:'none', fontSize:18, cursor:'pointer', color:'var(--muted)' }}>✕</button>
@@ -138,7 +138,7 @@ function DetailModal({ order, onClose, onStatusChange }) {
         <div
           className="card"
           style={{
-            width: 650,
+            width: 'min(650px, 92vw)',
             padding: 24,
             maxHeight: '90vh',
             overflowY: 'auto',
@@ -203,12 +203,8 @@ function DetailModal({ order, onClose, onStatusChange }) {
 
           {/* DETAILS */}
           <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 12,
-              marginBottom: 16,
-            }}
+            className="grid-2" style={{ gap: 12,
+              marginBottom: 16 }}
           >
 
             {[
@@ -468,7 +464,8 @@ export default function CustomOrders() {
         ) : orders.length === 0 ? (
           <div style={{ textAlign:'center', padding:40, color:'var(--muted)' }}>No orders found.</div>
         ) : (
-          <table className="table">
+          <div className="table-wrap">
+<table className="table">
             <thead>
               <tr>
                 <th>ID</th><th>Customer</th><th>Description</th>
@@ -523,6 +520,7 @@ export default function CustomOrders() {
               ))}
             </tbody>
           </table>
+</div>
         )}
       </div>
 

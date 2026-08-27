@@ -64,7 +64,7 @@ export default function RBAC() {
       </div>
 
       {/* Stats */}
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:14, marginBottom:20 }}>
+      <div className="grid-4" style={{ gap:14, marginBottom:20 }}>
         {[
           { label:'Total Users',  value:users.length,  icon:'👥', color:'#1a73e8', bg:'#e6f0ff' },
           { label:'Admins',       value:adminCount,    icon:'👔', color:'#7b3fd4', bg:'#f0e6ff' },
@@ -116,7 +116,8 @@ export default function RBAC() {
           ) : filtered.length === 0 ? (
             <div style={{ textAlign:'center', padding:32, color:'var(--muted)' }}>No users found.</div>
           ) : (
-            <table className="table">
+            <div className="table-wrap">
+<table className="table">
               <thead>
                 <tr><th>User</th><th>Email</th><th>Phone</th><th>Current Role</th><th>Joined</th><th>Change Role</th></tr>
               </thead>
@@ -159,13 +160,14 @@ export default function RBAC() {
                 })}
               </tbody>
             </table>
+</div>
           )}
         </div>
       )}
 
       {/* ── Tab: Permission Matrix ── */}
       {activeTab === 'matrix' && (
-        <div style={{ display:'grid', gridTemplateColumns:'1fr 2fr', gap:14 }}>
+        <div className="grid-1-2" style={{ gap:14 }}>
           {/* Roles */}
           <div className="card">
             <div className="card-header"><span className="card-title">Roles</span></div>
@@ -190,7 +192,8 @@ export default function RBAC() {
           {/* Matrix */}
           <div className="card">
             <div className="card-header"><span className="card-title">Permission Matrix</span></div>
-            <table className="table">
+            <div className="table-wrap">
+<table className="table">
               <thead>
                 <tr>
                   <th>Permission</th>
@@ -219,6 +222,7 @@ export default function RBAC() {
                 ))}
               </tbody>
             </table>
+</div>
           </div>
         </div>
       )}
@@ -227,7 +231,7 @@ export default function RBAC() {
       {activeTab === 'security' && (
         <div className="card">
           <div className="card-header"><span className="card-title">API Security & Validation</span></div>
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:12 }}>
+          <div className="grid-3" style={{ gap:12 }}>
             {[
               { icon:'🔒', label:'JWT Authentication', val:'HS256 · 7 day expiry',   sub:'bcrypt 12 rounds' },
               { icon:'🚦', label:'Rate Limiting',       val:'200 req / 15 min',       sub:'Auth: 20 req / 15 min' },
